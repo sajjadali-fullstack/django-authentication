@@ -1,0 +1,20 @@
+exam-portal-django
+
+A responsive online exam portal built with Django and Bootstrap, featuring quiz categories for Java, Python, and Aptitude
+
+django, python, bootstrap5, quiz-app, exam-portal, full-stack, backend-development
+
+
+SajjadExams - Online Exam Portal 🚀
+
+A modern, responsive online examination web application built using **Django** and **Bootstrap 5**. This platform allows users to take tests across various categories like Python, Java, and Aptitude.
+
+## 📌 Features
+* **Responsive Navbar:** Fully optimized for mobile, tablet, and desktop screens using Bootstrap 5.
+* **Clean Architecture:** Built with expandable Django base templates for smooth rendering.
+* **Upcoming Features:** Complete user authentication system (Signup, Login, Logout) and dynamic quiz logic.
+
+## 🛠️ Tech Stack
+* **Backend:** Python, Django
+* **Frontend:** HTML5, Bootstrap 5
+* **Database:** SQLite / MySQL
