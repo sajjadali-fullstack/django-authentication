@@ -1,20 +1,74 @@
-exam-portal-django
+Q. What is decorators?
+>>> without changing the code of the paricular method / particular functionality on it its like a wrapper is called decorators.
 
-A responsive online exam portal built with Django and Bootstrap, featuring quiz categories for Java, Python, and Aptitude
+                                                Steps 
+                                                ``````
 
-django, python, bootstrap5, quiz-app, exam-portal, full-stack, backend-development
+auth application use one table ==> user
+Create superuser and go to admin interface then add users
 
 
-SajjadExams - Online Exam Portal 🚀
+Problem-1
+---------
+Page not found 
+request Method : GET
+Request URL : http://locolhost:8000/accounts/login/?next=/java/
 
-A modern, responsive online examination web application built using **Django** and **Bootstrap 5**. This platform allows users to take tests across various categories like Python, Java, and Aptitude.
+solve this problem by including authentiacation application urls 
 
-## 📌 Features
-* **Responsive Navbar:** Fully optimized for mobile, tablet, and desktop screens using Bootstrap 5.
-* **Clean Architecture:** Built with expandable Django base templates for smooth rendering.
-* **Upcoming Features:** Complete user authentication system (Signup, Login, Logout) and dynamic quiz logic.
+urls.py
+-------
+from django.urls import path, include
+path('accounts/', include('django.contrib.auth.urls'))
 
-## 🛠️ Tech Stack
-* **Backend:** Python, Django
-* **Frontend:** HTML5, Bootstrap 5
-* **Database:** SQLite / MySQL
+Problem-2
+---------
+TemplateDoesNotExist at /accounts/login/
+registeration/login.html 
+
+=> Create a folder under templates with the name registration and create a file login.html
+
+
+login.html 
+-----------
+Implement login functionality by injecting  {{form }} in login.html
+
+Implemennt Logout functionality
+----------------------------------
+
+Step1-  Update logout link with the url patter: /accounts/logout/
+        <a href="accounts/login/" class="nav-link">Login</a>
+
+
+Step2 - Define seperate logout destination page:
+
+logout.html 
+-----------
+
+views.py 
+`````````
+# Logout View 
+def logout_view(request):
+    logout(request)  # one user logout the session should be clear
+    return render(request,'testapp/logout.html')
+
+urls.py 
+````````
+path('logout/', views.logout_view, name='logout'),
+  
+<a href="{% url 'logout' %}" class="nav-link btn">Logout</a>    
+
+
+
+Implementing signup button functionality
+----------------------------------------
+
+1. Auth application having form class to provide login form.
+2. But auth application does not contain any form for signup functionality.
+3. If a user signup, compulsory that information should be stored in DataBase(user table)
+4. Display form to signup and that information should be stored inside DataBase directly.
+5. For such type of requirement it is highly recommended to go for model based form.
+
+forms.py
+`````````
+

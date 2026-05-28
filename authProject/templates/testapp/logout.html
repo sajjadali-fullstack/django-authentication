@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+
+<!-- Title -->
+{% block title %}
+<title>Login | Page</title>
+{% endblock title %}
+
+<!-- Content -->
+{% block bodyBlock %}
+<div class="jumbotron">
+    <div class="container" align="center">
+
+        <h1>THANKS FOR USING OUR EXAM PORTAL</h1>
+        
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora numquam repellendus beatae asperiores esse aut, sunt dicta exercitationem. Facere veniam reiciendis corporis earum sapiente omnis cumque sunt, possimus quo deleniti?</p>
+
+        <h2>Login again to enjoy.....</h2>
+        <a href="accounts/login/" class="btn btn-success">Login</a>
+
+        <!-- <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Login"> -->
+        
+
+    </div>
+</div>
+{% endblock bodyBlock %}
