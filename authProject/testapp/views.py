@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
+from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
 from testapp.forms import SignUpForm
 
@@ -36,19 +36,36 @@ def aptitude_view(request):
 def sajjad_view(request):
     return render(request, 'testapp/sajjad_about.html')
 
-# Signup View
+
+# Login View
+def login_view(request):
+    if request.method == 'POST':
+        u_name = request.POST.get('username')
+        p_word = request.POST.get('password')
+        user = authenticate(request, username=u_name, password=p_word)
+        if user is not None:
+            login(request, user)
+            return redirect('home')  # Login hone ke baad Home page par bhejein
+        else:
+            # Agar credentials galat hain
+            return render(request, 'registration/login.html', {'error': 'Invalid username or password'})
+
+    return render(request, 'registration/login.html')
+
+
+# Signup / Registration View
 def signup_view(request):
 
     form = SignUpForm()
 
     if request.method == 'POST':
         form = SignUpForm(request.POST)
-
         if form.is_valid():
-            user = form.save()
-            user.set_password(user.password)
-            user.save()
+            user = form.save() # Form automatically password hash kar deta hai
+            login(request, user) # Signup hote hi user ko auto-login karwane ke liye
             return redirect('home')
+    else:
+        form = SignUpForm()
 
     return render(request, 'registration/signup.html', {'form': form})
 
