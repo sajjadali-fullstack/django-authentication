@@ -23,27 +23,5 @@ Sajjad Exams ek fully functional, secure aur responsive **Online Examination Por
 
 - **Backend:** Python, Django
 - **Frontend:** HTML5, Bootstrap 5, Custom CSS
-- **Database:** SQLite (Default / Customizable to MySQL)
+- **Database:** SQLite 
 
----
-
-## 📂 Project Structure
-
-```text
-├── your_project_name/       # Main Project Configuration Directory
-│   ├── settings.py          # Redirect configurations (LOGIN_REDIRECT_URL, etc.)
-│   ├── urls.py              # Ordered Routing layout & application inclusions
-│   └── ...
-├── testapp/                 # Core Application Directory
-│   ├── forms.py             # Custom SignUpForm with widget masking
-│   ├── views.py             # Business logic for auth states and protected exams
-│   ├── urls.py              # Application specific endpoints
-│   └── ...
-└── templates/               # UI Layouts Directory
-    ├── testapp/
-    │   ├── base.html        # Main template with conditional navbar
-    │   ├── home.html        # Portal dashboard with exam rule books
-    │   └── logout.html      # Responsive grid system for instructions
-    └── registration/
-        ├── login.html       # Handled input attributes for authentication
-        └── signup.html      # Field-by-field rendering layout
