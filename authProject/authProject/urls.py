@@ -24,7 +24,9 @@ urlpatterns = [
     path('java/', views.java_view, name='java'),  # Java
     path('aptitude/', views.aptitude_view, name='aptitude'),  # Aptitude
     path('sajjad/', views.sajjad_view, name='sajjad'),
-    path('accounts/', include('django.contrib.auth.urls')),
+    
+    path('accounts/', include('django.contrib.auth.urls')), # Django ka khud ka system
+    path('accounts/login/', views.login_view, name='login'), # Aapka custom system
     path('accounts/register/', views.signup_view, name='signup'),
     path('logout/', views.logout_view, name='logout'),
     
