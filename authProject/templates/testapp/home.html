@@ -2,24 +2,58 @@
 {% extends 'testapp/base.html' %}
 <!-- Title -->
 {% block title %}
-    <title>Home | Page</title>
+<title>Home | Page</title>
 {% endblock title %}
 
 <!-- Body -->
 
 <!-- Content -->
-    {% block bodyBlock %}
-        <div class="jumbotron">
-            <div class="container mt-4">
-                <h1>Welcom to Sajjad Exams</h1>
-                <h2 class="heading-1">Instruction</h2>
-                <ul>
-                    <li>Rule-1 : </li>
-                    <li>Rule-2 : </li>
-                    <li>Rule-3 : </li>
-                    
-                </ul>
-            
+{% block bodyBlock %}
+<div class="jumbotron">
+    <div class="container mt-4">
+
+
+        <div class="card shadow-sm p-4 mt-4">
+            <h1 class="text-primary fw-bold mb-3">Welcome to Sajjad Exams</h1>
+            <h2 class="h4 text-secondary mb-3"><i class="bi bi-info-circle-fill"></i> Instructions & Rules</h2>
+
+            <div class="alert alert-warning" role="alert">
+                <strong>Please read all the instructions carefully before starting the exam.</strong>
             </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-start">
+                    <span class="badge bg-dark me-3 mt-1">Rule-1</span>
+                    <div>
+                        <strong>Time Management:</strong> Once you click the start button, the timer will begin. Each
+                        exam has a specific time limit, and it will auto-submit when the time expires.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex align-items-start">
+                    <span class="badge bg-dark me-3 mt-1">Rule-2</span>
+                    <div>
+                        <strong>Navigation & Refresh:</strong> Do NOT refresh the page or press the back button during
+                        the test. Doing so might clear your progress or auto-submit your incomplete response.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex align-items-start">
+                    <span class="badge bg-dark me-3 mt-1">Rule-3</span>
+                    <div>
+                        <strong>Submission:</strong> Make sure to review all your answers before hitting the final
+                        <strong>Submit Exam</strong> button. Once submitted, you cannot modify your answers.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex align-items-start">
+                    <span class="badge bg-dark me-3 mt-1">Rule-4</span>
+                    <div>
+                        <strong>Authentication Requirement:</strong> You must remain logged in throughout the session.
+                        If your login session expires or you clear your browser cookies, you will be locked out of the
+                        exam.
+                    </div>
+                </li>
+            </ul>
         </div>
-    {% endblock bodyBlock %}
+
+    </div>
+</div>
+{% endblock bodyBlock %}
